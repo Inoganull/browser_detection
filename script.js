@@ -36,6 +36,17 @@ function getScreenInfo() {
     return `Screen Resolution: ${screen.width}x${screen.height}, Pixel Ratio: ${window.devicePixelRatio}`;
 }
 
+//IP address detection
+fetch('https://api64.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+        const ipInfo = document.createElement('div');
+        ipInfo.className = 'info';
+        ipInfo.textContent = `IP Address: ${data.ip}`;
+        document.body.appendChild(ipInfo);
+})
+    .catch(err => console.error('Failed to fetch IP', err));
+
 document.getElementById("browserInfo").textContent = `Browser: ${getBrowserInfo()}`;
 document.getElementById("osInfo").textContent = `Operating System: ${getOSInfo()}`;
 document.getElementById("screenInfo").textContent = getScreenInfo();
