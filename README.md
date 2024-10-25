@@ -1,2 +1,1 @@
--------------------------------------------Browser Detecction--------------------------------------------------------
-It's showing browserinf, OS info, screen info and IP address detection.
+It's showing browserinfo, OS info, screen info and IP address detection.
